@@ -6,8 +6,8 @@ import NavMenu from "./NavMenu";
 const Navbar = () => {
 	return (
 		<div className="shadow-md">
-			<div className="w-9/12 mx-auto navbar ">
-				<div className="navbar-start">
+			<div className="w-9/12 mx-auto navbar">
+				<div className="navbar-start -ml-2">
 					<div className="dropdown">
 						<div
 							tabIndex={0}
@@ -44,7 +44,7 @@ const Navbar = () => {
 						<NavMenu></NavMenu>
 					</ul>
 				</div>
-				<div className="navbar-end">
+				<div className="navbar-end -mr-2">
 					<a className="btn">Button</a>
 				</div>
 			</div>
