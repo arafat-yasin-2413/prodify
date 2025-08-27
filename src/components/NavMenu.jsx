@@ -19,7 +19,7 @@ const NavMenu = () => {
         <li key={href}>
           <Link
             href={href}
-            className={`nav text-base font-semibold tracking-wider ${
+            className={`nav text-sm font-semibold tracking-wider ${
               pathname === href ? "active-link" : ""
             }`}
           >

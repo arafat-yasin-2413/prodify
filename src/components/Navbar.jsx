@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import NavMenu from "./NavMenu";
+import Link from "next/link";
 
 const Navbar = () => {
 	return (
@@ -44,8 +44,10 @@ const Navbar = () => {
 						<NavMenu></NavMenu>
 					</ul>
 				</div>
-				<div className="navbar-end -mr-2">
-					<a className="btn">Button</a>
+				<div className="navbar-end gap-2 -mr-2">
+					<Link className="btn bg-green-400 hover:bg-green-500/90 transition duration-300 rounded text-sm" href="/register">Register</Link>
+                    <Link className="btn bg-green-400 hover:bg-green-500/90 transition duration-300 rounded text-sm" href="/login">Login</Link>
+                    <button className="btn bg-green-400 hover:bg-green-500/90 transition duration-300 rounded text-sm">Logout</button>
 				</div>
 			</div>
 		</div>
