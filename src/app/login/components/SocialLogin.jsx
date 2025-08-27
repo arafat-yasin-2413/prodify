@@ -7,7 +7,7 @@ const SocialLogin = () => {
     const handleSocialLogin = async(providerName) =>{
         console.log("SOCIAL LOGIN : ", providerName);
 
-        const result = await signIn(providerName, {redirect: false})
+        const result = await signIn(providerName, {redirect: false , callbackUrl: "/"})
         console.log(result);
     }
 

@@ -1,13 +1,12 @@
 "use client";
 import { registerUser } from "@/app/actions/auth/registerUser";
+import SocialLogin from "@/app/login/components/SocialLogin";
 import React, { useState } from "react";
 
 const RegisterForm = () => {
+	const [message, setMessage] = useState("");
 
-    const [message, setMessage] = useState("");
-
-
-    const handleSubmit = async (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		const form = e.target;
@@ -15,15 +14,14 @@ const RegisterForm = () => {
 		const email = form.email.value;
 		const password = form.password.value;
 
-	    const res = await registerUser({ name, email, password });
+		const res = await registerUser({ name, email, password });
 
-        if(res.success) {
-            setMessage("Registration successfull");
-            form.reset();
-        }
-        else{
-            setMessage(" XX " + res.message);
-        }
+		if (res.success) {
+			setMessage("Registration successfull");
+			form.reset();
+		} else {
+			setMessage(" XX " + res.message);
+		}
 	};
 
 	return (
@@ -55,6 +53,12 @@ const RegisterForm = () => {
 				</a>
 			</div>
 			<button className="btn btn-neutral mt-4">Register</button>
+
+			<div className="flex flex-col justify-center items-center mt-6">
+				<p className="text-sm font-semibold">Or Start with</p>
+
+				<SocialLogin></SocialLogin>
+			</div>
 		</form>
 	);
 };
