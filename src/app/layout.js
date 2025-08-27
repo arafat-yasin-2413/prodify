@@ -1,6 +1,8 @@
 import { Geist, Geist_Mono, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
+import { Toaster } from "react-hot-toast";
+import NextAuthProvider from "@/Providers/NextAuthProvider";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -27,11 +29,16 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en" data-theme="light">
 			<body className={`${poppins.variable}`}>
-				<Navbar></Navbar>
+				<NextAuthProvider>
+					<Navbar></Navbar>
 
-				<div className="w-9/12 mx-auto">
-                    {children}
-                </div>
+					<Toaster></Toaster>
+    
+                    <div className="w-9/12 mx-auto">{children}</div>
+				
+                
+                
+                </NextAuthProvider>
 			</body>
 		</html>
 	);

@@ -31,21 +31,21 @@ const RegisterForm = () => {
 			<label className="text-base font-semibold">Name</label>
 			<input
 				type="text"
-				className="border-2 border-gray-200 p-2 h-12 rounded text-base font-semibold tracking-wider placeholder:text-gray-400 placeholder:text-md placeholder:font-normal"
+				className="border-2 border-gray-200 p-2 h-12 rounded text-base tracking-wider placeholder:text-gray-400 placeholder:text-md placeholder:font-normal"
 				placeholder="your name"
 				name="name"
 			/>
 			<label className="text-base font-semibold">Email</label>
 			<input
 				type="email"
-				className="border-2 border-gray-200 p-2 h-12 rounded text-base font-semibold tracking-wider placeholder:text-gray-400 placeholder:text-md placeholder:font-normal"
+				className="border-2 border-gray-200 p-2 h-12 rounded text-base tracking-wider placeholder:text-gray-400 placeholder:text-md placeholder:font-normal"
 				placeholder="your email"
 				name="email"
 			/>
 			<label className="text-base font-semibold">Password</label>
 			<input
 				type="password"
-				className="border-2 border-gray-200 p-2 h-12 rounded text-base font-semibold tracking-wider placeholder:text-gray-400 placeholder:text-md placeholder:font-normal"
+				className="border-2 border-gray-200 p-2 h-12 rounded text-base tracking-wider placeholder:text-gray-400 placeholder:text-md placeholder:font-normal"
 				placeholder="enter your password"
 				name="password"
 			/>

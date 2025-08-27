@@ -1,9 +1,14 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import NavMenu from "./NavMenu";
 import Link from "next/link";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
+	const { data: session, status } = useSession();
+	console.log(session, status);
+
 	return (
 		<div className="shadow-md">
 			<div className="w-9/12 mx-auto navbar">
@@ -37,7 +42,21 @@ const Navbar = () => {
 							<NavMenu></NavMenu>
 						</ul>
 					</div>
-					<Link href={"/"} className="text-xl cursor-pointer flex items-center gap-2"><Image src="/assets/logo.png" alt="logo image" width={40} height={40}></Image><span className="text-2xl font-extrabold"><span className="text-green-600">Pro</span><span>dify</span></span></Link>
+					<Link
+						href={"/"}
+						className="text-xl cursor-pointer flex items-center gap-2"
+					>
+						<Image
+							src="/assets/logo.png"
+							alt="logo image"
+							width={40}
+							height={40}
+						></Image>
+						<span className="text-2xl font-extrabold">
+							<span className="text-green-600">Pro</span>
+							<span>dify</span>
+						</span>
+					</Link>
 				</div>
 				<div className="navbar-center hidden lg:flex">
 					<ul className="menu menu-horizontal px-1">
@@ -45,9 +64,26 @@ const Navbar = () => {
 					</ul>
 				</div>
 				<div className="navbar-end gap-2 -mr-2">
-					<Link className="btn bg-green-400 hover:bg-green-500/90 transition duration-300 rounded text-sm" href="/register">Register</Link>
-                    <Link className="btn bg-green-400 hover:bg-green-500/90 transition duration-300 rounded text-sm" href="/login">Login</Link>
-                    <button className="btn bg-green-400 hover:bg-green-500/90 transition duration-300 rounded text-sm">Logout</button>
+					{status == "authenticated" ? (
+						<button onClick={()=>signOut()} className="btn bg-green-400 hover:bg-green-500/90 transition duration-300 rounded text-sm">
+							Logout
+						</button>
+					) : (
+						<>
+							<Link
+								className="btn bg-green-400 hover:bg-green-500/90 transition duration-300 rounded text-sm"
+								href="/register"
+							>
+								Register
+							</Link>
+							<Link
+								className="btn bg-green-400 hover:bg-green-500/90 transition duration-300 rounded text-sm"
+								href="/login"
+							>
+								Login
+							</Link>
+						</>
+					)}
 				</div>
 			</div>
 		</div>
