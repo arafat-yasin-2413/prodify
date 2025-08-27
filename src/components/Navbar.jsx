@@ -7,7 +7,7 @@ import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
 	const { data: session, status } = useSession();
-	console.log(session, status);
+	console.log(session);
 
 	return (
 		<div className="shadow-md">
@@ -65,9 +65,13 @@ const Navbar = () => {
 				</div>
 				<div className="navbar-end gap-2 -mr-2">
 					{status == "authenticated" ? (
+                        <>
+                        <Image className="rounded-full" src={session?.user?.image} width={36} height={36} alt={session?.user?.name}></Image>
 						<button onClick={()=>signOut()} className="btn bg-green-400 hover:bg-green-500/90 transition duration-300 rounded text-sm">
 							Logout
 						</button>
+
+                        </>
 					) : (
 						<>
 							<Link
