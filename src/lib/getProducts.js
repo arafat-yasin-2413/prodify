@@ -19,7 +19,7 @@ export async function getAllProducts() {
 	try {
 		const collection = await dbConnect(
 			collectionNamesObj.productsCollection
-		); // await lagbe যদি dbConnect async হয়
+		);
 		const products = await collection.find({}).toArray();
 
 		// Convert _id to string for frontend
