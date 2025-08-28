@@ -50,6 +50,7 @@ export default function AddProductForm() {
         // ensure price is integer
         payload.price = parseInt(payload.price, 10);
 
+        ////////////////// TODO : CONNECT POST API HERE
         try {
             setLoading(true);
             const res = await fetch("/api/products", {

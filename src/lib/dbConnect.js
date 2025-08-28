@@ -1,22 +1,22 @@
-import { MongoClient, ServerApiVersion } from "mongodb"
+// import { MongoClient, ServerApiVersion } from "mongodb"
 
-export const collectionNamesObj = {
-    usersCollection : "users", productsCollection: "products"
-}
+// export const collectionNamesObj = {
+//     usersCollection : "users", productsCollection: "products"
+// }
 
-export default function dbConnect(collectionName) {
+// export default function dbConnect(collectionName) {
 
-    const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
+//     const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
     
-    // Create a MongoClient with a MongoClientOptions object to set the Stable API version
-    const client = new MongoClient(uri, {
-      serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
-      }
-    });
+//     // Create a MongoClient with a MongoClientOptions object to set the Stable API version
+//     const client = new MongoClient(uri, {
+//       serverApi: {
+//         version: ServerApiVersion.v1,
+//         strict: true,
+//         deprecationErrors: true,
+//       }
+//     });
 
-    return client.db(process.env.DB_NAME).collection(collectionName)
+//     return client.db(process.env.DB_NAME).collection(collectionName)
 
-}
+// }
