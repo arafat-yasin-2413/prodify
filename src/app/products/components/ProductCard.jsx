@@ -27,7 +27,7 @@ export default function ProductCard({ product }) {
 
                 <div className="mt-3 flex items-center justify-between">
                     <span className="text-lg font-semibold">${product.price ?? "0.00"}</span>
-                    <Link href={`/products/details/${product._id}`} className="btn btn-sm btn-primary">
+                    <Link href={`/products/details/${product._id}`} className="btn btn-sm bg-green-600 text-white tracking-wider rounded">
                         See Details
                     </Link>
                 </div>

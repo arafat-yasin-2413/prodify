@@ -3,6 +3,22 @@ import { getServerSession } from "next-auth";
 import dbConnect, { collectionNamesObj } from "@/lib/dbConnect";
 import { authOptions } from "@/lib/authOptions";
 
+
+
+export async function GET(req) {
+  try {
+    const productsCollection = dbConnect(collectionNamesObj.productsCollection);
+
+    // top 4 product
+    const products = await productsCollection.find().limit(4).toArray();
+
+    return NextResponse.json(products, { status: 200 });
+  } catch (error) {
+    console.error("API GET /api/products error:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
+
 export async function POST(req) {
 	try {
 		const session = await getServerSession(authOptions);

@@ -1,5 +1,6 @@
 import Container from "@/components/Container";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
@@ -22,9 +23,11 @@ const Hero = () => {
 							Premium gadgets and accessories designed to upgrade
 							your lifestyle.
 						</p>
+                        <Link href="/products">
 						<button className="mt-8 px-2 py-1 xl:px-4 xl:py-2 text-sm bg-green-600 hover:bg-green-600/90 text-white font-semibold tracking-wider rounded shadow-lg transition cursor-pointer">
 							All Products
 						</button>
+                        </Link>
 					</div>
 				</div>
 			</div>
