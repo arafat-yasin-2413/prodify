@@ -1,5 +1,3 @@
-
-
 import { MongoClient } from "mongodb";
 
 export const collectionNamesObj = {
