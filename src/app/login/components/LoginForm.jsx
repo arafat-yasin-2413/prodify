@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import SocialLogin from "./SocialLogin";
+import Link from "next/link";
 
 
 
@@ -71,11 +72,11 @@ const LoginForm = () => {
                 name="password"
             />
             <div>
-                <a className="link link-hover text-sm font-semibold">
-                    Don't have an Account? 
-                </a>
+                <p className="text-sm font-semibold tracking-wider">
+                    Don't have an Account? <span><Link className="link link-hover hover:text-green-600" href="/register">Register</Link></span>
+                </p>
             </div>
-            <button className="btn btn-neutral mt-4">Login</button>
+            <button className="btn bg-green-600 text-white tracking-wider hover:bg-green-600/90 mt-4">Login</button>
 
 
             <div className="flex flex-col justify-center items-center mt-6">

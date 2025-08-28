@@ -1,6 +1,7 @@
 "use client";
 import { registerUser } from "@/app/actions/auth/registerUser";
 import SocialLogin from "@/app/login/components/SocialLogin";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const RegisterForm = () => {
@@ -48,11 +49,11 @@ const RegisterForm = () => {
 				name="password"
 			/>
 			<div>
-				<a className="link link-hover text-sm font-semibold">
-					Already have an Account?
-				</a>
-			</div>
-			<button className="btn btn-neutral mt-4">Register</button>
+                <p className="text-sm font-semibold tracking-wider">
+                    Already have an Account? <span><Link className="link link-hover hover:text-green-600" href="/login">Login</Link></span>
+                </p>
+            </div>
+            <button className="btn bg-green-600 text-white tracking-wider hover:bg-green-600/90 mt-4">Register</button>
 
 			<div className="flex flex-col justify-center items-center mt-6">
 				<p className="text-sm font-semibold">Or Start with</p>
