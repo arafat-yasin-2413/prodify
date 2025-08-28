@@ -1,24 +1,25 @@
-import { getAllProducts } from "@/lib/getProducts";
-import ProductCard from "./components/ProductCard";
 import Container from "@/components/Container";
-// import ProductCard from "@/components/ProductCard";
+import { getAllProducts } from "@/lib/getProducts";
+import ProductsGrid from "../register/components/ProductsGrid";
 
 export default async function ProductsPage() {
-	const products = await getAllProducts();
+    let products = [];
+    try {
+        products = await getAllProducts();
+    } catch (err) {
+        console.error("Failed to fetch products:", err);
+        products = [];
+    }
 
-	return (
-		<Container>
-			<main className="container mx-auto p-4">
-				<h1 className="text-2xl text-green-600 font-semibold mb-6">
-					All Products
-				</h1>
+    return (
+        <Container>
+            <main className="container mx-auto p-4">
+                <h1 className="text-2xl text-green-600 font-semibold mb-6">
+                    All Products
+                </h1>
 
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-					{products.map((product) => (
-						<ProductCard key={product._id} product={product} />
-					))}
-				</div>
-			</main>
-		</Container>
-	);
+                <ProductsGrid products={products} />
+            </main>
+        </Container>
+    );
 }

@@ -3,22 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductCard({ product }) {
+
+    const imgSrc = product.photoURL
+        ? product.photoURL
+        : "/assets/logofav.png";
+
     return (
         <article className="card bg-base-100 shadow-md rounded-2xl overflow-hidden">
             <div className="relative w-56 h-56">
-                {product.photoURL ? (
-                    <Image
-                        src={product.photoURL}
-                        alt={product.name}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                ) : (
-                    <div className="w-full h-full bg-gray-100 flex items-center justify-center">
-                        No image
-                    </div>
-                )}
+                {/* <Image
+                    src={imgSrc}
+                    alt={product.name || "Product"}
+                    fill
+                    className="object-cover rounded-lg"
+                /> */}
+
+                <img src={imgSrc} alt={product.name || "product"} className="object-cover rounded-lg" />
             </div>
 
             <div className="p-4">
