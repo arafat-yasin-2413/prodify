@@ -3,10 +3,13 @@
 import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import toast, { Toaster } from "react-hot-toast";
+import { ClipLoader } from "react-spinners";
 
 export default function AddProductForm() {
     const { data: session } = useSession();
     const userEmail = session?.user?.email || "";
+    const [loading, setLoading] = useState(false);
+
 
     const [form, setForm] = useState({
         name: "",
@@ -48,6 +51,7 @@ export default function AddProductForm() {
         payload.price = parseInt(payload.price, 10);
 
         try {
+            setLoading(true);
             const res = await fetch("/api/products", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -79,10 +83,13 @@ export default function AddProductForm() {
             console.error(err);
             toast.error(err.message || "Server error");
         }
+        finally {
+            setLoading(false)
+        }
     };
 
     return (
-        <div className="max-w-3xl">
+        <div className="w-full px-8 py-4">
             <Toaster />
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
@@ -143,8 +150,14 @@ export default function AddProductForm() {
                     <input name="photoURL" value={form.photoURL} onChange={handleChange} className="input input-bordered w-full" />
                 </div>
 
-                <div>
-                    <button type="submit" className="btn btn-primary">Add Product</button>
+                <div className="flex justify-center items-center">
+                    {loading ? (
+                        <ClipLoader color="#16A34A" size={30} /> 
+                    ) : (
+                    <button type="submit" className="btn bg-green-600 hover:bg-green-600/90 rounded">
+                        Add Product
+                    </button>
+    )}
                 </div>
             </form>
         </div>

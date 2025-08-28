@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function ProductCard({ product }) {
     return (
         <article className="card bg-base-100 shadow-md rounded-2xl overflow-hidden">
-            <div className="relative w-full h-48">
+            <div className="relative w-56 h-56">
                 {product.photoURL ? (
                     <Image
                         src={product.photoURL}

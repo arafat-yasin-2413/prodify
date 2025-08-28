@@ -9,7 +9,7 @@ export default function AddProductPage() {
 
     return (
         <div>
-            <h2 className="text-xl font-semibold">Add Product</h2>
+            <h2 className="text-2xl text-center text-green-600 my-4 font-semibold">Add Product</h2>
 
             {/* add product form here */}
             <AddProductForm></AddProductForm>
