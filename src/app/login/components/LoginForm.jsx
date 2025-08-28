@@ -29,7 +29,7 @@ const LoginForm = () => {
 
             if(response.ok){
                 toast.success("Logged in Successfully");
-                router.push("/");
+                router.push("/products");
                 form.reset();
             }
             else{
@@ -72,7 +72,7 @@ const LoginForm = () => {
             />
             <div>
                 <a className="link link-hover text-sm font-semibold">
-                    Forgot password?
+                    Don't have an Account? 
                 </a>
             </div>
             <button className="btn btn-neutral mt-4">Login</button>

@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Poppins } from "next/font/google";
+import { Geist, Geist_Mono, Poppins} from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 import { Toaster } from "react-hot-toast";
@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 const poppins = Poppins({
-	variable: "--font-poppins",
-	weight: ["400"],
-	subsets: ["latin"],
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--font-poppins",
 });
 
 export const metadata = {
@@ -27,8 +27,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en" data-theme="light">
-			<body className={`${poppins.variable}`}>
+		<html lang="en" className={poppins.variable} data-theme="light" >
+			<body>
 				<NextAuthProvider>
 					<Navbar></Navbar>
 

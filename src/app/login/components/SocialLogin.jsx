@@ -22,7 +22,7 @@ const SocialLogin = () => {
 
     useEffect(()=>{
         if(session?.status == "authenticated"){
-            router.push("/");
+            router.push("/products");
             toast.success("Login with Google Successfull");
         }
     },[session?.status])

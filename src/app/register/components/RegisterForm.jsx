@@ -49,7 +49,7 @@ const RegisterForm = () => {
 			/>
 			<div>
 				<a className="link link-hover text-sm font-semibold">
-					Forgot password?
+					Already have an Account?
 				</a>
 			</div>
 			<button className="btn btn-neutral mt-4">Register</button>

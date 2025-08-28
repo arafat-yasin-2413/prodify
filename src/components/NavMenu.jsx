@@ -7,7 +7,7 @@ const NavMenu = () => {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/allProducts", label: "All Products" },
+    { href: "/products", label: "Products" },
     { href: "/dashboard", label: "Dashboard" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
