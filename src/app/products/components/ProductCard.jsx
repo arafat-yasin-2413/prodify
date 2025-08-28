@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductCard({ product }) {
     return (
@@ -26,7 +27,9 @@ export default function ProductCard({ product }) {
 
                 <div className="mt-3 flex items-center justify-between">
                     <span className="text-lg font-semibold">${product.price ?? "0.00"}</span>
-                    <button className="btn btn-sm btn-primary">See Details</button>
+                    <Link href={`/products/details/${product._id}`} className="btn btn-sm btn-primary">
+                        See Details
+                    </Link>
                 </div>
             </div>
         </article>
