@@ -78,12 +78,12 @@ Prodify is a **Next.js + NextAuth** project where users can add, view, and manag
 | `/` | GET | Home page, top products display |
 | `/products` | GET | All products list |
 | `/products/[id]` | GET | Single product details |
-| `/about` | About page |
-| `/contact` | Contact page |
-| `/login` |Login page and authentication |
-| `/register` | User registration |
-| `/dashboard` | User dashboard Home |
-| `/dashboard/addProducts` | POST | Adding products |
+| `/about` | About page | About Prodify |
+| `/contact` | Contact page | Contact Form |
+| `/login` |Login page and authentication | Credential and Google |
+| `/register` | User registration |  Credential and Google |
+| `/dashboard` | User dashboard Home | 
+| `/dashboard/addProducts` | POST | Adding products | Adding New Product |
 
 
 
