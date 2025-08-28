@@ -76,12 +76,12 @@ git clone <your-repo-url>
 cd prodify
 
 2. **Install Dependencies**
-```bash
+
 npm install
 
 
 3. **Environment Variables**
-```bash
+
 NEXT_PUBLIC_MONGODB_URI=your_mongodb_connection_uri
 DB_NAME=prodify
 NEXTAUTH_URL=http://localhost:3000
@@ -90,7 +90,7 @@ GOOGLE_CLIENT_ID=your_google_client_id
 GOOGLE_CLIENT_SECRET=your_google_client_secret
 
 4. **Run the development server**
-```bash
+
 npm run dev
 
 ---
