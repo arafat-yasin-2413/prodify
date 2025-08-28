@@ -1,3 +1,46 @@
+// v3
+
+import dbConnect, { collectionNamesObj } from "./dbConnect";
+
+export async function getAllProducts() {
+	try {
+		const collection = await dbConnect(
+			collectionNamesObj.productsCollection
+		);
+		const products = await collection.find({}).toArray();
+		return products.map((p) => ({
+			...p,
+			_id: p._id.toString(),
+		}));
+	} catch (error) {
+		console.error("Failed to fetch products:", error);
+		return [];
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// v1
+
 // // import dbConnect, { collectionNamesObj } from "@/lib/dbConnect";
 
 // import dbConnect, { collectionNamesObj } from "./dbConnect";
@@ -13,22 +56,26 @@
 // 	}));
 // }
 
-import dbConnect, { collectionNamesObj } from "./dbConnect";
+// import dbConnect, { collectionNamesObj } from "./dbConnect";
 
-export async function getAllProducts() {
-	try {
-		const collection = await dbConnect(
-			collectionNamesObj.productsCollection
-		);
-		const products = await collection.find({}).toArray();
+// v 2
+// import dbConnect, { collectionNamesObj } from "./dbConnect";
 
-		// Convert _id to string for frontend
-		return products.map((p) => ({
-			...p,
-			_id: p._id.toString(),
-		}));
-	} catch (error) {
-		console.error("Failed to fetch products:", error);
-		return [];
-	}
-}
+// export async function getAllProducts() {
+// 	try {
+// 		const collection = await dbConnect(
+// 			collectionNamesObj.productsCollection
+// 		);
+// 		const products = await collection.find({}).toArray();
+
+//         // console.log('total : ', products.length);
+// 		// Convert _id to string for frontend
+// 		return products.map((p) => ({
+// 			...p,
+// 			_id: p._id.toString(),
+// 		}));
+// 	} catch (error) {
+// 		console.error("Failed to fetch products:", error);
+// 		return [];
+// 	}
+// }
