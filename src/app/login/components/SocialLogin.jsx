@@ -16,7 +16,7 @@ const SocialLogin = () => {
         // console.log("SOCIAL LOGIN : ", providerName);
         // console.log(session);
         setIsSocialLogin(true);
-        signIn(providerName)
+        signIn(providerName);
         // console.log('after signin  :',session);
 
     }
