@@ -6,7 +6,7 @@ export default async function ProductsPage() {
     let products = [];
     try {
         products = await getAllProducts();
-        console.log('total product found : ', products)
+        // console.log('total product found : ', products)
     } catch (err) {
         console.error("Failed to fetch products:", err);
         products = [];

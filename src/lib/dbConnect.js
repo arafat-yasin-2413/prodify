@@ -1,6 +1,6 @@
-// final
 
-import { MongoClient, ServerApiVersion } from "mongodb";
+
+import { MongoClient } from "mongodb";
 
 export const collectionNamesObj = {
 	usersCollection: "users",
@@ -9,30 +9,17 @@ export const collectionNamesObj = {
 
 const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
 
-if (!uri) throw new Error("Please add your Mongo URI to .env.local");
+let client;
+let clientPromise;
 
-let cachedClient = global.mongoClient;
-let cachedDb = global.mongoDb;
-
-if (!cachedClient) {
-	cachedClient = new MongoClient(uri, {
-		serverApi: {
-			version: ServerApiVersion.v1,
-			strict: true,
-			deprecationErrors: true,
-		},
-	});
-	cachedDb = cachedClient.db(process.env.DB_NAME);
-
-	// store in global for reuse
-	global.mongoClient = cachedClient;
-	global.mongoDb = cachedDb;
+if (!clientPromise) {
+	client = new MongoClient(uri);
+	clientPromise = client.connect();
 }
 
 export default async function dbConnect(collectionName) {
-	// connect once
-	if (!cachedClient.isConnected?.()) await cachedClient.connect();
-	return cachedDb.collection(collectionName);
+	const client = await clientPromise;
+	return client.db(process.env.DB_NAME).collection(collectionName);
 }
 
 
@@ -41,6 +28,54 @@ export default async function dbConnect(collectionName) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+// final
+
+// import { MongoClient, ServerApiVersion } from "mongodb";
+
+// export const collectionNamesObj = {
+// 	usersCollection: "users",
+// 	productsCollection: "products",
+// };
+
+// const uri = process.env.NEXT_PUBLIC_MONGODB_URI;
+
+// if (!uri) throw new Error("Please add your Mongo URI to .env.local");
+
+// let cachedClient = global.mongoClient;
+// let cachedDb = global.mongoDb;
+
+// if (!cachedClient) {
+// 	cachedClient = new MongoClient(uri, {
+// 		serverApi: {
+// 			version: ServerApiVersion.v1,
+// 			strict: true,
+// 			deprecationErrors: true,
+// 		},
+// 	});
+// 	cachedDb = cachedClient.db(process.env.DB_NAME);
+
+// 	// store in global for reuse
+// 	global.mongoClient = cachedClient;
+// 	global.mongoDb = cachedDb;
+// }
+
+// export default async function dbConnect(collectionName) {
+// 	// connect once
+// 	if (!cachedClient.isConnected?.()) await cachedClient.connect();
+// 	return cachedDb.collection(collectionName);
+// }
 
 // latest
 

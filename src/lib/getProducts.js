@@ -8,6 +8,9 @@ export async function getAllProducts() {
 			collectionNamesObj.productsCollection
 		);
 		const products = await collection.find({}).toArray();
+
+        console.log('total product found : ', products.length);
+
 		return products.map((p) => ({
 			...p,
 			_id: p._id.toString(),
