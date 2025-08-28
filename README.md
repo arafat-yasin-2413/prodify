@@ -68,6 +68,26 @@ Prodify is a **Next.js + NextAuth** project where users can add, view, and manag
 
 ---
 
+
+# Prodify Project Route Summary
+
+## Public Routes
+
+| Route | Method | Description |
+|-------|--------|-------------|
+| `/` | GET | Home page, top products display |
+| `/products` | GET | All products list |
+| `/products/[id]` | GET | Single product details |
+| `/about` | About page |
+| `/contact` | Contact page |
+| `/login` |Login page and authentication |
+| `/register` | User registration |
+| `/dashboard` | User dashboard Home |
+| `/dashboard/addProducts` | POST | Adding products |
+
+
+
+
 ## Setup & Installation
 
 1. **Clone the repo**
