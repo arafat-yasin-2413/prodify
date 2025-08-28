@@ -3,6 +3,7 @@ import { registerUser } from "@/app/actions/auth/registerUser";
 import SocialLogin from "@/app/login/components/SocialLogin";
 import Link from "next/link";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 const RegisterForm = () => {
 	const [message, setMessage] = useState("");
@@ -18,10 +19,12 @@ const RegisterForm = () => {
 		const res = await registerUser({ name, email, password });
 
 		if (res.success) {
-			setMessage("Registration successfull");
 			form.reset();
+            toast.success("Registration Successfull!");
+			setMessage("Registration successfull");
 		} else {
-			setMessage(" XX " + res.message);
+			toast.error("Something went wrong!!");
+            setMessage(" XX " + res.message);
 		}
 	};
 

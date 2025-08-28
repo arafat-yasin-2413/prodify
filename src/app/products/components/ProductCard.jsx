@@ -19,6 +19,7 @@ export default function ProductCard({ product }) {
                 /> */}
 
                 <img src={imgSrc} alt={product.name || "product"} className="object-cover rounded-lg" />
+
             </div>
 
             <div className="p-4">

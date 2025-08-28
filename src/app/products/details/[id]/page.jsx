@@ -1,4 +1,3 @@
-// import { getProductById } from "@/lib/getProductById";
 import Container from "@/components/Container";
 import { getProductById } from "@/lib/getProductsById";
 import Image from "next/image";

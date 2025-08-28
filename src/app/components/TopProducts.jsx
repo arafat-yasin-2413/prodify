@@ -3,16 +3,18 @@ import dbConnect, { collectionNamesObj } from "@/lib/dbConnect";
 import Link from "next/link";
 
 
-// async function getProducts() {
-//     const productsCollection = await dbConnect(collectionNamesObj.productsCollection);
-//     const products = await productsCollection.find().limit(4).toArray();
-//     return products;
-// }
+async function getProducts() {
+    const productsCollection = await dbConnect(collectionNamesObj.productsCollection);
+    const products = await productsCollection.find().limit(4).toArray();
+    return products;
+}
 
 export default async function TopProducts() {
-    // const products = await getProducts();
+    const products = await getProducts();
 
     return (
+
+        
         <Container>
             <section className="py-10">
                 <h2 className="text-2xl text-green-600 font-bold mb-6">Featured Products</h2>

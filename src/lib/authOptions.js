@@ -55,7 +55,7 @@ export const authOptions = {
             if(account) {
                 const { providerAccountId, provider} = account;
                 const { email: user_email, image, name } = user;
-                const usersCollection = dbConnect(collectionNamesObj.usersCollection);
+                const usersCollection = await dbConnect(collectionNamesObj.usersCollection);
                 
                 const isExisted = await usersCollection.findOne({providerAccountId})
                 if(!isExisted){

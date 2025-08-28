@@ -1,6 +1,6 @@
 import Container from "@/components/Container";
+import ProductsGrid from "@/components/ProductsGrid";
 import { getAllProducts } from "@/lib/getProducts";
-import ProductsGrid from "../register/components/ProductsGrid";
 
 export default async function ProductsPage() {
     let products = [];
