@@ -17,7 +17,7 @@ export default async function ProductDetailsPage({ params }) {
                 <h1 className="text-2xl font-bold mb-4">{product.name}</h1>
 
                 <div className="flex flex-col md:flex-row gap-6">
-                    <div className="w-full md:w-1/2 relative h-96">
+                    <div className="w-full md:w-1/3 relative h-96 border">
                         <Image
                             src={product.photoURL}
                             alt={product.name}

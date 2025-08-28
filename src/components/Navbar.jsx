@@ -12,7 +12,7 @@ const Navbar = () => {
     console.log(session);
 
     return (
-        <div className="shadow-md">
+        <div className="shadow-md sticky top-0 z-1 backdrop-blur-lg">
             <div className="w-9/12 mx-auto navbar ">
                 <div className="navbar-start gap-2 -ml-2">
                     <div className="dropdown">
