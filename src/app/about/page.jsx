@@ -5,7 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaMedal, FaHandshake, FaLightbulb, FaUsers } from "react-icons/fa";
 
+//
+// this should be in .env.local
+//NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+
 export default function About() {
+
+
     return (
         <Container>
 
