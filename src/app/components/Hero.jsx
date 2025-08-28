@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
+import heroImage from "../../../public/assets/hero.webp"
+
 const Hero = () => {
 	return (
 		<Container>
@@ -10,7 +12,7 @@ const Hero = () => {
 				<div className="relative h-[400px] xl:h-[600px] w-full">
 					<Image
 						className="object-cover rounded-2xl"
-						src="/assets/hero.webp"
+						src={heroImage}
 						alt="hero image"
 						fill
 					></Image>

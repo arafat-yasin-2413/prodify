@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import logoImage from "../../public/assets/logo.png"
 
 export default function ProdifyLogo() {
     return (
@@ -9,7 +10,7 @@ export default function ProdifyLogo() {
             className="text-xl cursor-pointer flex items-center gap-2"
         >
             <Image
-                src="/assets/logo.png"
+                src={logoImage}
                 alt="logo image"
                 width={40}
                 height={40}
