@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth";
 import dbConnect, { collectionNamesObj } from "@/lib/dbConnect";
 import { authOptions } from "@/lib/authOptions";
+// import { authOptions } from "@/lib/authOptions";
 
 
 
@@ -75,7 +76,7 @@ export async function POST(req) {
 		}
 
 		
-		const productsCollection = dbConnect(
+		const productsCollection = await dbConnect(
 			collectionNamesObj.productsCollection
 		);
 
