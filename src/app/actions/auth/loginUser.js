@@ -5,7 +5,7 @@ import dbConnect, { collectionNamesObj } from "@/lib/dbConnect";
 export const loginUser = async(payload) => {
     const { email, password } = payload;
 
-    const usersCollection = dbConnect(collectionNamesObj.usersCollection);
+    const usersCollection = await dbConnect(collectionNamesObj.usersCollection);
     const user = await usersCollection.findOne({ email });
 
     if(!user) return null;
